@@ -33,7 +33,7 @@ app.post('/send', async (req, res) => {
 
 app.post("/schedule", async (req, res) => {
     const {text,sec} =req.body;
- if (!text || sec) {
+ if (!text || !sec) {
     return res.status(400).json({ error: ' Missing required query parameters: text, sec' });
   }
 
