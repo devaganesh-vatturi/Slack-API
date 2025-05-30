@@ -142,7 +142,16 @@ app.delete('/deletemessage', async (req, res) => {
 
 app.post('/',(req,res)=>{
     res.send("hello:)");
-})
+});
+
+
+app.get(['/', '/bank'], (req, res) => {
+    try{
+    res.sendFile(__dirname + '/index.html');
+    }catch(e){
+      console.log("erorrrrr", e);
+    }
+  });
 app.listen(5000,()=>{
     console.log("started 5000");
 });
